@@ -1,0 +1,8 @@
+.movies {
+  max-width: 180rem;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  padding: 1rem 2rem;
+  gap: 1.6rem;
+}

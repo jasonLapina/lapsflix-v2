@@ -1,0 +1,9 @@
+.img {
+  transition: all 0.3s;
+  cursor: pointer;
+  border-radius: 1rem;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  }
+}
