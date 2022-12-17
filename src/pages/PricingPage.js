@@ -1,4 +1,6 @@
+import PricingPlans from '../components/pricing/PricingPlans';
+
 function PricingPage() {
-  return <h1>PRICING PAGE</h1>;
+  return <PricingPlans />;
 }
 export default PricingPage;

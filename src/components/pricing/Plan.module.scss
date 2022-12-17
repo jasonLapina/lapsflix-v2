@@ -1,0 +1,27 @@
+.plan {
+  background-color: black;
+  color: white;
+  padding: 2rem 4rem;
+  border-radius: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  h3 {
+    font-size: 5.6rem;
+  }
+}
+
+.price {
+  font-size: 2rem;
+}
+
+.starter {
+  background-color: black;
+  color: white;
+}
+
+.binge {
+  color: goldenrod;
+  background-color: black;
+}
