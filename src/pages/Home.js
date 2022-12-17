@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import MovieList from '../components/movies/MovieList';
 import { useSelector } from 'react-redux';
+import Header from '../components/header/Header';
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -25,9 +26,10 @@ function Home() {
   }, [url, params]);
 
   return (
-    <div>
+    <>
+      <Header />
       <MovieList movies={movies} />
-    </div>
+    </>
   );
 }
 

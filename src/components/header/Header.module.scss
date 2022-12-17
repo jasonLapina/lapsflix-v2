@@ -1,0 +1,35 @@
+.header {
+  max-width: 180rem;
+  margin: 4rem auto;
+  height: 56rem;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border-radius: 1rem;
+  position: relative;
+  img {
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    filter: brightness(0.6);
+  }
+  h1 {
+    padding: 1rem 2rem;
+    width: fit-content;
+    color: white;
+    background-color: rgba(135, 207, 235, 0.6);
+    position: absolute;
+    left: 2rem;
+    bottom: 40%;
+    border-radius: 1rem;
+  }
+}
+
+.btn {
+  position: absolute;
+  top: 60%;
+  left: 2rem;
+  margin-top: 2.4rem;
+}
