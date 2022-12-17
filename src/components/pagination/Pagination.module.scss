@@ -1,0 +1,25 @@
+.pages {
+  width: fit-content;
+  padding: 1rem 4rem;
+  margin: 1rem auto 4rem;
+  display: flex;
+  gap: 1rem;
+  & > * {
+    padding: 2rem;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    &:hover {
+      background-color: skyblue;
+      color: black;
+    }
+  }
+}

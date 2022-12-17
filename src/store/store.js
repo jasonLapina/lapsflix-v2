@@ -17,7 +17,12 @@ const slice = createSlice({
   reducers: {
     getInitMovies() {},
     getMoviesByGenre() {},
-    changePage() {},
+    changePage(state, action) {
+      state.params = {
+        ...state.params,
+        page: action.payload,
+      };
+    },
     search() {},
   },
 });
