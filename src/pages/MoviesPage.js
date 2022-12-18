@@ -1,15 +1,19 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import MovieList from '../components/movies/MovieList';
+import Search from '../components/search/Search';
+import { actions } from '../store/store';
 
 function MoviesPage() {
+  const dispatch = useDispatch();
   const [movies, setMovies] = useState([]);
   const url = useSelector((state) => state.BASE_URL);
+  const path = useSelector((state) => state.path);
   const params = useSelector((state) => state.params);
   useEffect(() => {
     const fetchMovies = async () => {
-      const res = await axios.get(`${url}/discover/movie`, {
+      const res = await axios.get(`${url}/${path}`, {
         params,
       });
       const data = res.data.results;
@@ -25,8 +29,17 @@ function MoviesPage() {
       setMovies(updatedMovies);
     };
     fetchMovies();
-  }, [url, params]);
+  }, [url, params, path]);
 
-  return <MovieList movies={movies} />;
+  const searchHandler = (value) => {
+    dispatch(actions.search(value));
+  };
+
+  return (
+    <>
+      <Search onSearch={searchHandler} />
+      <MovieList movies={movies} />
+    </>
+  );
 }
 export default MoviesPage;

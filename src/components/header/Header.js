@@ -7,7 +7,10 @@ function Header() {
   return (
     <header className={classes.header}>
       <img src={headerImg} alt='family watching television' />
-      <h1>Classics? Trending? We've got both.</h1>
+      <h1>
+        Enjoy the classics or Catch up with the trend! <br /> We've got all
+        kinds of movies and shows!
+      </h1>
       <Button
         onClick={() => {
           navigate('/pricing');
