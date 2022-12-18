@@ -18,8 +18,8 @@ function PricingPlans() {
   return (
     <>
       <div className={classes.plans}>
-        <Plan features={features.starter} title='Starter' price={25} />
-        <Plan features={features.binge} title='Binge HD' price={50} />
+        <Plan features={features.starter} title='Starter' price={5} />
+        <Plan features={features.binge} title='Binge HD' price={9} />
       </div>
     </>
   );

@@ -30,9 +30,9 @@ function MovieDetails({ text, pic, title, onHideModal, rating, votes, date }) {
           </a>
         </div>
         <div className={classes.details}>
-          <h3>
+          <h1>
             {title} ({releaseYear})
-          </h3>
+          </h1>
           <p className={classes.overview}>{text}</p>
           <p className={classes.rating}>
             <span style={avgStyle}>

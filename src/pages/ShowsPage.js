@@ -14,18 +14,20 @@ function ShowsPage() {
       });
       const data = res.data.results;
       const updatedMovies = data.map((item) => ({
-        title: item.title,
+        title: item.name,
         pic: item.backdrop_path,
         text: item.overview,
         id: item.id,
         rating: item.vote_average,
         votes: item.vote_count,
-        date: item.release_date,
+        date: item.first_air_date,
       }));
       setMovies(updatedMovies);
+      console.log(updatedMovies);
     };
     fetchMovies();
   }, [url, params]);
+
   return <MovieList movies={movies} />;
 }
 export default ShowsPage;
