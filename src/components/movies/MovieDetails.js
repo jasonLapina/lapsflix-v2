@@ -15,6 +15,7 @@ function MovieDetails({ text, pic, title, onHideModal, rating, votes, date }) {
   }
 
   const releaseYear = date.slice(0, 4);
+  const ratingPercentage = `${rating * 10}%`;
 
   return (
     <Modal onHideModal={onHideModal}>
@@ -35,7 +36,7 @@ function MovieDetails({ text, pic, title, onHideModal, rating, votes, date }) {
           <p className={classes.overview}>{text}</p>
           <p className={classes.rating}>
             <span style={avgStyle}>
-              {rating}
+              {ratingPercentage}
               <ion-icon name='star' />
             </span>
             <span className={classes.count}>
