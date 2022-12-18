@@ -1,15 +1,15 @@
+import MovieList from '../components/movies/MovieList';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import MovieList from '../components/movies/MovieList';
 
-function MoviesPage() {
+function ShowsPage() {
   const [movies, setMovies] = useState([]);
   const url = useSelector((state) => state.BASE_URL);
   const params = useSelector((state) => state.params);
   useEffect(() => {
     const fetchMovies = async () => {
-      const res = await axios.get(`${url}/discover/movie`, {
+      const res = await axios.get(`${url}/tv/popular`, {
         params,
       });
       const data = res.data.results;
@@ -26,7 +26,6 @@ function MoviesPage() {
     };
     fetchMovies();
   }, [url, params]);
-
   return <MovieList movies={movies} />;
 }
-export default MoviesPage;
+export default ShowsPage;

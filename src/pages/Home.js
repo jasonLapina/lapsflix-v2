@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => {
     const fetchMovies = async () => {
       const res = await axios.get(`${url}/discover/movie`, {
-        params: params,
+        params,
       });
       const data = res.data.results;
       const updatedMovies = data.map((item) => ({

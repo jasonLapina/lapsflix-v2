@@ -11,6 +11,9 @@
   gap: 4rem;
   & > * {
     text-transform: capitalize;
+    :hover {
+      color: red;
+    }
   }
 }
 

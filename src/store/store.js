@@ -7,7 +7,7 @@ const initState = {
   params: {
     sort_by: 'popularity.desc',
     api_key: 'b294078ac9e5deee42e81781ed53a00c',
-    page: 2,
+    page: 1,
   },
 };
 
