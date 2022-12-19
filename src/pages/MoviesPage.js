@@ -21,7 +21,6 @@ function MoviesPage() {
       const data = res.data;
       const movies = res.data.results;
       const totalPages = res.data.total_pages;
-      console.log(data);
       const updatedMovies = movies.map((item) => ({
         title: item.title,
         pic: item.backdrop_path,

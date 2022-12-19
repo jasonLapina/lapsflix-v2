@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 function Movie({ title, pic, text, id, votes, rating, date }) {
   const [showInfo, setShowInfo] = useState(false);
+  if (!pic) return;
   return (
     <div className={classes.movie}>
       <img src={`https://image.tmdb.org/t/p/w500${pic}`} alt={title} />
