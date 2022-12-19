@@ -31,6 +31,7 @@ function Home() {
   return (
     <>
       <Header />
+      <h1 style={{ textAlign: 'center' }}>Popular Movies</h1>
       <MovieList movies={movies} />
     </>
   );

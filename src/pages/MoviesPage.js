@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MovieList from '../components/movies/MovieList';
+import Pagination from '../components/pagination/Pagination';
 import Search from '../components/search/Search';
 import { actions } from '../store/store';
 
@@ -39,6 +40,7 @@ function MoviesPage() {
     <>
       <Search onSearch={searchHandler} />
       <MovieList movies={movies} />
+      <Pagination pages={20} />
     </>
   );
 }
