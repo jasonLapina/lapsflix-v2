@@ -9,6 +9,7 @@ import { actions } from '../store/store';
 function MoviesPage() {
   const dispatch = useDispatch();
   const [movies, setMovies] = useState([]);
+  const [pages, setPages] = useState(1);
   const url = useSelector((state) => state.BASE_URL);
   const path = useSelector((state) => state.path);
   const params = useSelector((state) => state.params);
@@ -17,8 +18,11 @@ function MoviesPage() {
       const res = await axios.get(`${url}/${path}`, {
         params,
       });
-      const data = res.data.results;
-      const updatedMovies = data.map((item) => ({
+      const data = res.data;
+      const movies = res.data.results;
+      const totalPages = res.data.total_pages;
+      console.log(data);
+      const updatedMovies = movies.map((item) => ({
         title: item.title,
         pic: item.backdrop_path,
         text: item.overview,
@@ -27,10 +31,11 @@ function MoviesPage() {
         votes: item.vote_count,
         date: item.release_date,
       }));
+      totalPages > 100 ? setPages(100) : setPages(totalPages);
       setMovies(updatedMovies);
     };
     fetchMovies();
-  }, [url, params, path]);
+  }, [url, params, path, pages]);
 
   const searchHandler = (value) => {
     dispatch(actions.search(value));
@@ -40,7 +45,7 @@ function MoviesPage() {
     <>
       <Search onSearch={searchHandler} />
       <MovieList movies={movies} />
-      <Pagination pages={20} />
+      <Pagination pages={pages} />
     </>
   );
 }
