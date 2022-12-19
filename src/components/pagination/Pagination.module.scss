@@ -23,20 +23,19 @@
       color: black;
     }
   }
-}
-
-.ctrl {
-  padding: 2rem;
-  background-color: skyblue;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s;
-  border: none;
-  &:hover {
-    background-color: lightgreen;
+  button {
+    padding: 2rem;
+    background-color: skyblue;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    border: none;
+    &:hover {
+      background-color: lightgreen;
+    }
   }
 }
