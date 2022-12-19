@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MovieList from '../components/movies/MovieList';
 import Pagination from '../components/pagination/Pagination';
-import Search from '../components/search/Search';
+import Controls from '../components/UI/Controls';
 import { actions } from '../store/store';
 
 function MoviesPage() {
@@ -18,7 +18,6 @@ function MoviesPage() {
       const res = await axios.get(`${url}/${path}`, {
         params,
       });
-      const data = res.data;
       const movies = res.data.results;
       const totalPages = res.data.total_pages;
       const updatedMovies = movies.map((item) => ({
@@ -35,14 +34,16 @@ function MoviesPage() {
     };
     fetchMovies();
   }, [url, params, path, pages]);
-
   const searchHandler = (value) => {
     dispatch(actions.search(value));
+  };
+  const filterHandler = (id) => {
+    dispatch(actions.getMoviesByGenre(id));
   };
 
   return (
     <>
-      <Search onSearch={searchHandler} />
+      <Controls onFilter={filterHandler} onSearch={searchHandler} />
       <MovieList movies={movies} />
       <Pagination pages={pages} />
     </>

@@ -1,3 +1,17 @@
 .searchBar {
-  margin: 9rem 4rem 2rem;
+  display: flex;
+  align-items: center;
+  input {
+    border: none;
+    padding: 5px 1rem;
+    &:focus {
+      outline: skyblue 4px solid;
+    }
+  }
+  button {
+    margin-left: -2rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+  }
 }

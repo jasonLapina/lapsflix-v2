@@ -17,7 +17,12 @@ const slice = createSlice({
   initialState: initState,
   reducers: {
     getInitMovies() {},
-    getMoviesByGenre() {},
+    getMoviesByGenre(state, action) {
+      state.params = {
+        with_genres: action.payload,
+        api_key: 'b294078ac9e5deee42e81781ed53a00c',
+      };
+    },
     changePage(state, action) {
       state.params = {
         ...state.params,

@@ -2,10 +2,11 @@ import classes from './Movie.module.scss';
 import Button from '../UI/Button';
 import MovieDetails from './MovieDetails';
 import { useState } from 'react';
+import { Alert } from 'reactstrap';
 
 function Movie({ title, pic, text, id, votes, rating, date }) {
   const [showInfo, setShowInfo] = useState(false);
-  if (!pic) return;
+  if (!pic) return <Alert color='danger'>No longer available.</Alert>;
   return (
     <div className={classes.movie}>
       <img src={`https://image.tmdb.org/t/p/w500${pic}`} alt={title} />
