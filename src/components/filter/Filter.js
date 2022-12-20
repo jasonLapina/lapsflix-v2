@@ -12,7 +12,7 @@ function Filter({ onFilter }) {
         'https://api.themoviedb.org/3/genre/movie/list?api_key=b294078ac9e5deee42e81781ed53a00c&language=en-US'
       );
       const updatedGenres = Object.values(res.data).flat();
-      console.log(updatedGenres);
+
       setGenres(updatedGenres);
     };
 

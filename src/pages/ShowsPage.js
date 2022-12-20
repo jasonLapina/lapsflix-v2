@@ -31,7 +31,6 @@ function ShowsPage() {
       }));
       totalPages > 100 ? setPages(100) : setPages(totalPages);
       setMovies(updatedMovies);
-      console.log(updatedMovies);
     };
     fetchMovies();
   }, [url, params]);
